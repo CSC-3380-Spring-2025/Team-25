@@ -1,10 +1,10 @@
 # [Name of the Project] : [Team Number]
 # Members
 Project Manager: Justin Mexil (@justin2flyy)\
-Communications Lead: Brandon Horvath ([GitHub Name])\
-Git Master: [Name] ([GitHub Name])\
-Design Lead: [Name] ([GitHub Name])\
-Quality Assurance Tester: [Name] ([GitHub Name])
+Communications Lead: Brandon Horvath (@Brandon0706)\
+Git Master: John Bellamy (@BellamyDev)\
+Design Lead: Daniel Liu (@Phohou)\
+Quality Assurance Tester: Kennadi Hope ([GitHub Name])
 
 # About Our Software
 
