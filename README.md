@@ -1,4 +1,4 @@
-# [Name of the Project] : [Team Number]
+# geauxtracker! : Team 25
 # Members
 Project Manager: Justin Mexil (@justin2flyy)\
 Communications Lead: Brandon Horvath (@Brandon0706)\
