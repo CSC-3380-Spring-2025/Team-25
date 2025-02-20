@@ -8,7 +8,13 @@ Quality Assurance Tester: Kennadi Hope ([GitHub Name])
 
 # About Our Software
 
-Describe a little about what the project is about here.
+Describe a little about what the project is about here:
+GeauxTracker is a web-based budgeting tool that transforms the tedious process of managing finances into an engaging, collaborative experience. The project focuses on:
+
+Real-Time Collaboration: Multiple users can edit and view budgets simultaneously, ensuring everyone stays updated with the latest financial information.
+Gamification: By incorporating a points-based system, badges, challenges, and leaderboards, the tool makes budgeting fun. Users are rewarded for adhering to their plans and face penalties for overspending.
+Predictive Financial Tips: Leveraging users’ transaction history, the tool offers personalized advice—like identifying unnecessary subscriptions—to help optimize spending.
+Built with modern web technologies such as Next.js, React, ShareDB, ExpressJS, and FastAPI, Budget Tracker streamlines budget management and keeps users motivated with interactive, game-like elements.
 ## Platforms Tested on
 - MacOS
 - Android
