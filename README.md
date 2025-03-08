@@ -22,7 +22,7 @@ Built with modern web technologies such as Next.js, React, ShareDB, ExpressJS, a
 - Linux
 - Windows
 # Important Links
-Kanban Board: [link]\
+Kanban Board: https://trello.com/b/LSgXJFF5/csc-3380-team-25-project
 Designs: [link]\
 Styles Guide(s): [link]
 
