@@ -9,7 +9,7 @@ function App() {
         <p className="text-center">My Budget App is a simple web application that allows users to manage their budget.</p>
       </header>
     </div>
-  );
+  ); //this comment
 }
 
 export default App;
