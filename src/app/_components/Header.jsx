@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 function Header() {
     return (
-        <div className='p-5 flex justify-between items-center shadow-md'>
+        <div className='p-5 flex justify-between items-center border shadow-md'>
             <Image src={'./logo.svg'}
             alt='logo'
             width={50}
