@@ -4,7 +4,7 @@ Project Manager: Justin Mexil (@justin2flyy)\
 Communications Lead: Brandon Horvath (@Brandon0706)\
 Git Master: John Bellamy (@BellamyDev)\
 Design Lead: Daniel Liu (@Phohou)\
-Quality Assurance Tester: Kennadi Hope ([GitHub Name])
+Quality Assurance Tester: Kennadi Hope ([Kennadi718])
 
 # About Our Software
 
