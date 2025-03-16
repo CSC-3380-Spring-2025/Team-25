@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 
 function Header({ logoSrc, buttonText}){
     return (
-   LandingPage
         <div className='p-5 flex justify-between items-center border shadow-md'>
             <Image src={'./logo.svg'}
             alt='logo'
