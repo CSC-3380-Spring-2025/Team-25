@@ -1,13 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from "./_components/Header";
+import Banner from "./_components/Banner";
+import Footer from "./_components/Footer";
 
 function App() {
   return (
     <div className="App">
-      <header className="Budget-App"> 
-        <h1 className="text-center text-green-300" >My Budget App</h1>
-        <p className="text-center">My Budget App is a simple web application that allows users to manage their budget.</p>
-      </header>
+      <Header/>
+      <Banner/>
+      <Footer/>
     </div>
   ); //this comment
 }
