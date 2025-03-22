@@ -1,8 +1,9 @@
 import React from 'react'
+import Image from 'next/image'
 
 function Banner() {
     return (
-        <section className="bg-gray-50">
+        <section className="bg-gray-50 flex item-center flex-col">
   <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
     <div className="mx-auto max-w-xl text-center">
       <h1 className="text-3xl font-extrabold sm:text-5xl">
@@ -32,6 +33,7 @@ function Banner() {
       </div>
     </div>
   </div>
+  <Image src={"/Untitled.png"} alt="demo=placeholder" width={800} height={500} className='mt-5 rounded-xl border-2'/>
 </section>
     )
 }
