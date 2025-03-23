@@ -25,17 +25,21 @@
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "ws": "^8.18.1"
+    "touch-cli": "^0.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/express": "^5.0.1",
     "@types/mongoose": "^5.11.96",
+    "@types/react": "^19.0.12",
     "@types/ws": "^8.18.0",
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
     "tailwindcss": "^4.0.12",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3"
+    "typescript": "^5.8.2"
+
   }
 }
