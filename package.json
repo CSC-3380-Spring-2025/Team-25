@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "tsx server/index.ts",
+    "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node .next/standalone/server/index.js",
     "lint": "next lint"
