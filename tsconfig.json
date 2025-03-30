@@ -9,7 +9,7 @@
     },
     "baseUrl": ".",
 
-    "target": "ES2017",
+    "target": "ESNEXT",
     "lib": [
       "dom",
       "dom.iterable",
