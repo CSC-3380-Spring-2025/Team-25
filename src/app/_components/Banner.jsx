@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function Banner() {
     return (
-        <section className="bg-gray-50 flex items-center flex-col">
+        <section className="flex items-center flex-col">
   <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
     <div className="mx-auto max-w-xl text-center">
       <h1 className="text-3xl font-extrabold sm:text-5xl">
