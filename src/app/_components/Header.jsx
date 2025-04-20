@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import { Button } from '@/components/ui/button';
+import { SignInButton } from '@clerk/nextjs';
 
 
 function Header() {
@@ -16,8 +16,8 @@ function Header() {
         width={50}
         height={30}
       />
-      <div className='flex items-center gap-4'>
-        <Button> </Button>
+      <div className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
+        <a href="http://localhost:3000/sign-in" className="text-sm font-semibold">Sign In</a>
       </div>
     </div>
   );
