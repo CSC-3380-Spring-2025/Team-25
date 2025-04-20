@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import { SignInButton } from '@clerk/nextjs';
+import { Button } from '@/components/ui/button';
 
 
 function Header() {
@@ -22,5 +22,6 @@ function Header() {
     </div>
   );
 }
+
 
 export default Header;
