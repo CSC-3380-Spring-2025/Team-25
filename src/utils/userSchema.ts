@@ -2,10 +2,10 @@ import { AnyPgColumn } from "drizzle-orm/pg-core";
 import { pgEnum, pgTable as table } from "drizzle-orm/pg-core";
 import * as t from "drizzle-orm/pg-core";
 
-export const rolesEnum = pgEnum("roles", ["guest", "user", "admin"]);
+export const rolesEnum = pgEnum("roles", ["guest", "user", "admin"]);  //roles for table
 
 export const users = table(
-  "users",
+  "users", // users table for information
   {
     id: t.integer().primaryKey().generatedAlwaysAsIdentity(),
     firstName: t.varchar("first_name", { length: 256 }),
