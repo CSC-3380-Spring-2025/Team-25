@@ -1,10 +1,20 @@
+// drizzle.config.ts
 import { defineConfig } from "drizzle-kit";
+import { config } from "dotenv";
+
+
+config({ path: ".env.local" });          
 
 export default defineConfig({
   dialect: "postgresql",
-  schema: "src/utils/userSchema.ts",
+
+  schema: [
+    "src/utils/userSchema.ts",
+    "src/utils/budget.ts",
+    "src/utils/transaction.ts",
+  ],
+
   dbCredentials: {
-    url: 'postgresql://neondb_owner:npg_e34PyTNtXMSs@ep-sweet-shadow-a40pjvg7-pooler.us-east-1.aws.neon.tech/ExpensesDatabase?sslmode=require'
-//replace with process.env.DATABASE_URL as string, //may work weird because its being passed as string
-  }
+    url: process.env.DATABASE_URL!,     
+  },
 });

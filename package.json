@@ -9,7 +9,6 @@
     "lint": "next lint",
     "db:push": "npx drizzle-kit push",
     "db:studio": "npx drizzle-kit studio"
-
   },
   "dependencies": {
     "@clerk/nextjs": "^6.14.3",
@@ -19,6 +18,7 @@
     "@teamwork/websocket-json-stream": "^2.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
     "drizzle-orm": "^0.42.0",
     "express": "^4.21.2",
     "firebase": "^11.4.0",
