@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "NODE_ENV=production node .next/standalone/server/index.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:push": "npx drizzle-kit push",
+    "db:studio": "npx drizzle-kit studio"
+
   },
   "dependencies": {
     "@clerk/nextjs": "^6.14.3",
