@@ -39,7 +39,6 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/dashboard/page.tsx/dash.js"
 , "src/utils/userSchema.ts"  ],
   "exclude": [
     "node_modules"

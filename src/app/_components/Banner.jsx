@@ -17,13 +17,12 @@ function Banner() {
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <href
+        <a
           className="block w-full rounded-sm bg-primary px-12 py-3 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:ring-3 focus:outline-none sm:w-auto"
-          href="http://localhost:3000/sign-in"
-          onClick={() => console.log('Navigate to Login')}
+          href="#"
         >
           Get Started
-        </href>
+        </a>
 
         <a
           className="block w-full rounded-sm px-12 py-3 text-sm font-medium text-primary shadow-sm hover:text-gray-800 focus:ring-3 focus:outline-none sm:w-auto"
