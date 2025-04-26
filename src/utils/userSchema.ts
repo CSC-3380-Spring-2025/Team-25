@@ -11,6 +11,8 @@ export const users = table(
     firstName: t.varchar("first_name", { length: 256 }),
     lastName: t.varchar("last_name", { length: 256 }),
     email: t.varchar().notNull(),
+    budget: t.integer().notNull(),
+    currentProgress: t.integer().notNull(),
     invitee: t.integer().references((): AnyPgColumn => users.id),
     role: rolesEnum().default("guest"),
   },
