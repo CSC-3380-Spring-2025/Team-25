@@ -4,13 +4,14 @@ import { Button } from '@/components/ui/button';
 
 
 function Header() {
-  const handleClick = () => {
-    console.log('Navigate to Login');
-  };
+
+  const onClick = () => {
+    console.log('Navigate to Home');
+  }
 
   return (
     <div className='p-5 flex items-center justify-between shadow-md'>
-      <Image 
+      <Image
         src={'/logo.svg'}
         alt='logo'
         width={50}
