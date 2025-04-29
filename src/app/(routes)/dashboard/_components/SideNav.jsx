@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";                // If you use React Router, change this to NavLink
-import { Home, ListChecks, Settings } from "lucide-react";
+import { Home, ListChecks, Settings, Medal } from "lucide-react";
 
 const navItems = [
   { href: "/dashboard",            label: "Overview", icon: Home },
   { href: "/dashboard/budgets",   label: "Budgets",  icon: ListChecks },
+  { href: "/dashboard/leaderboard",  label: "Leaderboard", icon: Medal },
   { href: "/dashboard/settings",  label: "Settings", icon: Settings },
+  
 ];
 
 export default function SideNav() {
