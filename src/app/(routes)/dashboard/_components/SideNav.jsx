@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";                // If you use React Router, change this to NavLink
-import { Home, ListChecks, Settings, Medal } from "lucide-react";
+import { Home, ListChecks, Settings, Medal, Banknote } from "lucide-react";
 
 const navItems = [
   { href: "/dashboard",            label: "Overview", icon: Home },
   { href: "/dashboard/budgets",   label: "Budgets",  icon: ListChecks },
+  {href:"/dashboard/transactions", label: "Transactions", icon: Banknote},
   { href: "/dashboard/leaderboard",  label: "Leaderboard", icon: Medal },
   { href: "/dashboard/settings",  label: "Settings", icon: Settings },
+  
   
 ];
 
