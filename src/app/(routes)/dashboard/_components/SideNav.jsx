@@ -13,7 +13,7 @@ const navItems = [
 export default function SideNav() {
   return (
     <nav className="h-full flex flex-col py-8 px-4">
-      <h1 className="text-2xl font-semibold mb-8">Budget&nbsp;Tracker</h1>
+      <h1 className="text-2xl font-semibold mb-8">LeveUp&nbsp;Budget</h1>
 
       <ul className="space-y-2">
         {navItems.map(({ href, label, icon: Icon }) => (

@@ -7,34 +7,27 @@ function Banner() {
   <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
     <div className="mx-auto max-w-xl text-center">
       <h1 className="text-3xl font-extrabold sm:text-5xl">
-        Understand User Flow.
-        <strong className="font-extrabold text-primary sm:block"> Increase Conversion. </strong>
+      Learn More
       </h1>
 
       <p className="mt-4 sm:text-xl/relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-        numquam ea!
+        Tired of boring spreadsheets or overly complex budgeting apps? So were we. That’s why we built something new.
+      </p>
+      <p className="mt-4 sm:text-xl/relaxed">
+        LevelUp Budget is a simple, intuitive budgeting app that helps you take control of your finances without the headaches.
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
-        <href
+        <a
           className="block w-full rounded-sm bg-primary px-12 py-3 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:ring-3 focus:outline-none sm:w-auto"
-          href="http://localhost:3000/sign-in"
-          onClick={() => console.log('Navigate to Login')}
+          href='/sign-in'
         >
           Get Started
-        </href>
-
-        <a
-          className="block w-full rounded-sm px-12 py-3 text-sm font-medium text-primary shadow-sm hover:text-gray-800 focus:ring-3 focus:outline-none sm:w-auto"
-          href="#"
-        >
-          Learn More
         </a>
+
       </div>
     </div>
   </div>
-  <Image src={"/Untitled.png"} alt="demo=placeholder" width={800} height={500} className='mt-5 rounded-xl border-2'/>
 </section>
     )
 }

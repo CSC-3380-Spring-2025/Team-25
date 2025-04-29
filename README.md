@@ -1,4 +1,4 @@
-# geauxtracker! : Team 25
+# LeveUp Budget! : Team 25
 # Members
 Project Manager: Justin Mexil (@justin2flyy)\
 Communications Lead: Brandon Horvath (@Brandon0706)\
