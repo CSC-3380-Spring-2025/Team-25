@@ -6,7 +6,7 @@ function Footer() {
         <h1 >        
         <nav className='flex gap-5 items-center justify-center sm:text-1xl'>
         <a href='/'>Home</a>
-        <a href='/about'>About</a>
+        <a href='/'>About</a>
         <a href='/'>Services</a>
         <a href='/contact'>Contact</a>
         </nav>

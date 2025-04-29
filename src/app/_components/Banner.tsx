@@ -7,13 +7,11 @@ function Banner() {
   <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
     <div className="mx-auto max-w-xl text-center">
       <h1 className="text-3xl font-extrabold sm:text-5xl">
-        About Us.
-        <strong className="font-extrabold text-primary sm:block"> Increase Conversion. </strong>
+        LevelUp Budget
       </h1>
 
       <p className="mt-4 sm:text-xl/relaxed">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt illo tenetur fuga ducimus
-        numquam ea!
+      At LevelUp Budget, we're on a mission to make personal finance not just manageable, but actually enjoyable.
       </p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -24,9 +22,16 @@ function Banner() {
           Get Started
         </a>
 
+        <a
+          className="block w-full rounded-sm px-12 py-3 text-sm font-medium text-primary shadow-sm hover:text-gray-800 focus:ring-3 focus:outline-none sm:w-auto"
+          href="/about"
+        >
+          Learn More
+        </a>
       </div>
     </div>
   </div>
+  <Image src={"/Untitled.png"} alt="demo=placeholder" width={800} height={500} className='mt-5 rounded-xl border-2'/>
 </section>
     )
 }

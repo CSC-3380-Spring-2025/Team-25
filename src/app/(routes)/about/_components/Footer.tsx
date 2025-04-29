@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className='p-5 bg-gray-800'>
+        <div className='p-1 bg-black text-white border-amber-50'>
         <h1 >        
         <nav className='flex gap-5 items-center justify-center sm:text-1xl'>
         <a href='/'>Home</a>

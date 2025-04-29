@@ -44,7 +44,7 @@ export default function BudgetsPage() {
             type="text"
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="input input-bordered w-64"
+            className="input input-bordered w-64 border-2"
           />
         </div>
         <div>
@@ -53,10 +53,10 @@ export default function BudgetsPage() {
             type="number"
             value={form.target}
             onChange={(e) => setForm({ ...form, target: e.target.value })}
-            className="input input-bordered w-40"
+            className="input input-bordered w-40 border-2"
           />
         </div>
-        <button type="submit" className="btn btn-primary flex items-center gap-2">
+        <button type="submit" className="rounded-sm bg-primary px-10 py-2 text-sm font-medium text-white shadow-sm hover:bg-gray-800 focus:ring-3 focus:outline-none focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 flex items-center gap-2">
           <Plus className="w-4 h-4" /> Create
         </button>
       </form>
