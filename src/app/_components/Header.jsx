@@ -23,7 +23,7 @@ function Header() {
       {isSignedIn?
       <UserButton/> :
       <div className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
-        <a href="http://localhost:3000/sign-in" className="text-sm font-semibold">Sign In</a>
+        <a href='/sign-in' className="text-sm font-semibold">Sign In</a>
       </div>
     }
     </div>

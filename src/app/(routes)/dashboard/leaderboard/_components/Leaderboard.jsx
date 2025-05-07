@@ -30,9 +30,8 @@ export default function Leaderboard() {
             <tr key={row.id} className="border-t dark:border-gray-700">
               <td className="px-4 py-2">{i + 1}</td>
               <td className="px-4 py-2">{row.name}</td>
-              <td className="px-4 py-2">
-                {Math.min(row.percent, 1) /* cap at 100% */}
-                { (Math.min(row.percent, 1) * 100).toFixed(1) }%
+              <td className="px-4 py-2 text-left">
+                {(Math.min(row.percent, 1) * 100).toFixed(1)}%
               </td>
             </tr>
           ))}

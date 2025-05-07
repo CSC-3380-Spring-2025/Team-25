@@ -7,7 +7,7 @@ const navItems = [
   { href: "/dashboard/budgets",   label: "Budgets",  icon: ListChecks },
   {href:"/dashboard/transactions", label: "Transactions", icon: Banknote},
   { href: "/dashboard/leaderboard",  label: "Leaderboard", icon: Medal },
-  { href: "/dashboard/settings",  label: "Settings", icon: Settings },
+  //{ href: "/dashboard/settings",  label: "Settings", icon: Settings },
   
   
 ];
