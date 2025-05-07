@@ -1,61 +1,112 @@
 # LevelUp Budget Tracker : Team 25
-# Members
-Project Manager: Justin Mexil (@justin2flyy)\
-Communications Lead: Brandon Horvath (@Brandon0706)\
-Git Master: John Bellamy (@BellamyDev)\
-Design Lead: Daniel Liu (@Phohou)\
-Quality Assurance Tester: Kennadi Hope ([@Kennadi718])
 
-# About Our Software
+## Team Members
 
-Describe a little about what the project is about here:	                 
-LevelUp Budget is a web-based budgeting tool that transforms the tedious process of managing finances into an engaging, collaborative experience. The project focuses on:
+- **Project Manager:** Justin Mexil (@justin2flyy)  
+- **Communications Lead:** Brandon Horvath (@Brandon0706)  
+- **Git Master:** John Bellamy (@BellamyDev)  
+- **Design Lead:** Daniel Liu (@Phohou)  
+- **Quality Assurance Tester:** Kennadi Hope (@Kennadi718)
 
-Real-Time Collaboration: Multiple users can edit and view budgets simultaneously, ensuring everyone stays updated with the latest financial information.
-Gamification: By incorporating a points-based system, badges, challenges, and leaderboards, the tool makes budgeting fun. Users are rewarded for adhering to their plans and face penalties for overspending.
-Predictive Financial Tips: Leveraging users’ transaction history, the tool offers personalized advice—like identifying unnecessary subscriptions—to help optimize spending.
-Built with modern web technologies such as Next.js, React, ShareDB, ExpressJS, and FastAPI, Budget Tracker streamlines budget management and keeps users motivated with interactive, game-like elements.
-## Platforms Tested on
-- MacOS
-- Android
-- iOS
-- Linux
-- Windows
-# Important Links
-Kanban Board: https://trello.com/b/LSgXJFF5/csc-3380-team-25-project
-Designs: [link]\
-Styles Guide(s): [link]
+---
 
-# How to Run Dev and Test Environment
+## About the Project
 
-## Dependencies
-- List all dependencies here
-- Don't forget to include versions
-### Downloading Dependencies
-Describe where to download the dependencies here. Some will likely require a web download. Provide links here. For IDE extensions, make sure your project works with the free version of them, and detail which IDE(s) these are available in. 
+**LevelUp Budget** is a gamified, collaborative budgeting tool that aims to make personal finance management both engaging and effective. It enables users to:
 
-## Commands
-Describe how the commands and process to launch the project on the main branch in such a way that anyone working on the project knows how to check the affects of any code they add.
+- **Collaborate in Real Time**: Multiple users can interact with shared budgets simultaneously, fostering transparency and group accountability.
+- **Gamify Budgeting**: Earn points, unlock badges, and rise on leaderboards by meeting financial goals or spending wisely.
+- **Get Smart Suggestions**: The app uses previous financial behavior to deliver predictive and personalized budgeting tips (e.g., identifying unused subscriptions or recurring spikes in spending).
 
-```sh
-Example terminal command syntax
+Built using **Next.js**, **React**, **ShareDB**, **ExpressJS**, and **FastAPI**, the LevelUp Budget Tracker merges modern technology with user-centric financial planning.
+
+---
+
+## Platforms Tested On
+
+- macOS
+- Linux (Ubuntu 22.04)
+- Windows 10 / 11
+- Android (Chrome + Mobile View)
+- iOS (Safari + Chrome)
+
+---
+
+## Important Links
+
+- **Kanban Board**: [Trello Board](https://trello.com/b/LSgXJFF5/csc-3380-team-25-project)  
+- **Design Files (Figma or similar)**: _[Pending upload - replace with link]_  
+- **Style Guide / Code Standards**: _[Pending upload - replace with link]_  
+
+---
+
+## Dependencies and Versions
+
+- Node.js (v18.x)
+- npm (v9.x)
+- Python (v3.11+)
+- FastAPI (v0.110+)
+- Uvicorn (v0.29+)
+- React (v18.x)
+- Next.js (v13+)
+- ShareDB (v1.5+)
+- ExpressJS (v4.18+)
+- dotenv (v16+)
+- CORS (v2.8+)
+
+---
+
+## How to Download Dependencies
+
+1. **Install Node.js and npm**  
+   [https://nodejs.org/en/download](https://nodejs.org/en/download)
+
+2. **Install Python 3.11+**  
+   [https://www.python.org/downloads/](https://www.python.org/downloads/)
+
+3. **Install FastAPI and Backend Dependencies**  
+   ```bash
+   pip install fastapi uvicorn python-dotenv
+   ```
+
+4. **Install Frontend Dependencies**  
+   Navigate to the frontend directory and run:
+   ```bash
+   npm install
+   ```
+
+5. **IDE Extensions (Recommended but Optional):**
+   - VSCode  
+     - Python Extension by Microsoft  
+     - ESLint  
+     - Prettier  
+     - GitLens
+
+   All extensions and dependencies are free and compatible with the **Community Edition** of VSCode.
+
+---
+
+## Running the Project (From Code)
+
+### 1. Start Backend Server (FastAPI)
+In the root backend directory, run:
+```bash
+uvicorn main:app --reload --port 8000
 ```
 
-It is very common in these sections to see code in peculiar boxes to help them stand out. Check the markdown section of the Project Specifications to see how to add more / customize these.
-
-```python
-def code_highlight_example(m: int, m: float, s: str) -> str:
-	return s + str(n*m)
+### 2. Start Frontend Server (Next.js/React)
+Navigate to the frontend directory:
+```bash
+npm run dev
 ```
 
-```java
-public static void main(String[] args){
-	System.out.println("Hello, World!");
-}
-```
+The frontend is typically accessible at `http://localhost:3000` and the backend at `http://localhost:8000`.
 
-```c#
-static void Main(){
-	Console.WriteLine("Hello, World!");
-}
-```
+---
+
+## Notes
+
+- Ensure `.env` files for both frontend and backend are correctly set up. Sample environment files are provided as `.env.example`.
+- All commands must be executed from the correct directory (backend/frontend).
+- This setup supports live-reloading for development.
+- If you encounter CORS issues, make sure the backend allows requests from `localhost:3000`.
