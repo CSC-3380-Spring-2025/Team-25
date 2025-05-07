@@ -1,12 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, FormEvent, ChangeEvent } from "react";
 import { Share2, X } from "lucide-react";
+import type { JSX } from "react";
 
-export default function ShareButton({ budget, onShare }) {
-  const [open, setOpen] = useState(false);
-  const [ids, setIds] = useState("");
+type ShareButtonProps = {
+  budget: {
+    id: string | number;
+    name: string;
+  };
+  onShare: (budgetId: string | number, userIds: string[]) => void;
+};
 
-  const submit = (e) => {
+export default function ShareButton({ budget, onShare }: ShareButtonProps): JSX.Element {
+  const [open, setOpen] = useState<boolean>(false);
+  const [ids, setIds] = useState<string>("");
+
+  const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const list = ids
       .split(",")
@@ -48,7 +57,7 @@ export default function ShareButton({ budget, onShare }) {
                 <input
                   type="text"
                   value={ids}
-                  onChange={(e) => setIds(e.target.value)}
+                  onChange={(e: ChangeEvent<HTMLInputElement>) => setIds(e.target.value)}
                   className="input input-bordered w-full"
                   placeholder="1, 42, 99"
                 />

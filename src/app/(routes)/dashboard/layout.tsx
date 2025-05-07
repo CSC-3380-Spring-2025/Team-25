@@ -1,8 +1,14 @@
 "use client";
-import React from "react";
-import SideNav from "./_components/SideNav";
 
-export default function DashboardLayout({ children }) {
+import React, { ReactNode } from "react";
+import SideNav from "./_components/SideNav";
+import type { JSX } from "react";
+
+interface DashboardLayoutProps {
+  children: ReactNode;
+}
+
+export default function DashboardLayout({ children }: DashboardLayoutProps): JSX.Element {
   return (
     <div className="flex">
       {/* Sidebar */}

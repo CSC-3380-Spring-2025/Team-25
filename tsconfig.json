@@ -40,7 +40,7 @@
     "**/*.ts",
     "**/*.tsx"
 , "src/app/(routes)/dashboard/page.tsx/dash.js"
-, "src/utils/userSchema.ts", "src/app/(routes)/dashboard/budgets/page.jsx", "src/app/_components/Header.jsx", "src/app/page.js"  ],
+, "src/utils/userSchema.ts", "src/app/(routes)/dashboard/budgets/page.tsx", "src/app/_components/Header.tsx", "src/app/page.js"  ],
   "exclude": [
     "node_modules"
   ]
