@@ -64,23 +64,13 @@ Built using **Next.js**, **React**, **ShareDB**, **ExpressJS**, and **FastAPI**,
 2. **Install Python 3.11+**  
    [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-3. **Install FastAPI and Backend Dependencies**  
-   ```bash
-   pip install fastapi uvicorn python-dotenv
-   ```
+3. **Install Backend Dependencies**  
 
 4. **Install Frontend Dependencies**  
    Navigate to the frontend directory and run:
    ```bash
    npm install
    ```
-
-5. **IDE Extensions (Recommended but Optional):**
-   - VSCode  
-     - Python Extension by Microsoft  
-     - ESLint  
-     - Prettier  
-     - GitLens
 
    All extensions and dependencies are free and compatible with the **Community Edition** of VSCode.
 
@@ -90,12 +80,10 @@ Built using **Next.js**, **React**, **ShareDB**, **ExpressJS**, and **FastAPI**,
 
 ### 1. Start Backend Server (FastAPI)
 In the root backend directory, run:
-```bash
-uvicorn main:app --reload --port 8000
-```
+
 
 ### 2. Start Frontend Server (Next.js/React)
-Navigate to the frontend directory:
+
 ```bash
 npm run dev
 ```
