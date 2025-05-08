@@ -13,7 +13,6 @@ import React, {
 import Link from "next/link";
 import { Plus, Users, Trash2 } from "lucide-react";
 import { useAuth, SignInButton } from "@clerk/nextjs";
-import ShareButton from "./_components/ShareButton";
 
 export interface BudgetRow {
   id: number;

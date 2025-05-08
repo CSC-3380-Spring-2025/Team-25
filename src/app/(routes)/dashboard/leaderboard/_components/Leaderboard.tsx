@@ -1,9 +1,4 @@
-/* ---------------------------------------------------------------------
- *  Leaderboard component
- *  -------------------------------------------------------------
- *  Shows the top budgets in the whole DB ranked by dollars spent.
- *  Fetches data once on mount, so you can drop it into any page.
- * -------------------------------------------------------------------*/
+
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -15,7 +10,6 @@ export interface LeaderboardRow {
 }
 
 interface Props {
-  /** How many rows to show (default = 5). */
   limit?: number;
 }
 
