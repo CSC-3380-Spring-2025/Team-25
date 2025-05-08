@@ -4,7 +4,6 @@ import { budgetMembers } from "@/utils/budget";
 import { getOrCreateMe } from "@/utils/getOrCreateMe";
 import { eq, and, desc } from "drizzle-orm";
 
-/* ---------------- GET /api/budgets/[id]/transactions ---------------- */
 export async function GET(
   _req: Request,
   { params }: { params: { id: string } },
@@ -14,7 +13,6 @@ export async function GET(
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  /* caller must be a member of the budget */
   const [mem] = await db
     .select()
     .from(budgetMembers)
@@ -36,7 +34,6 @@ export async function GET(
   return Response.json(rows);
 }
 
-/* ---------------- POST /api/budgets/[id]/transactions --------------- */
 export async function POST(
   req: Request,
   { params }: { params: { id: string } },
@@ -51,7 +48,6 @@ export async function POST(
     return Response.json({ error: "Missing amount" }, { status: 400 });
   }
 
-  /* permission check */
   const [mem] = await db
     .select()
     .from(budgetMembers)

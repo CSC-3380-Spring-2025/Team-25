@@ -1,4 +1,3 @@
-/* Defines ONLY the `users` table – no imports from ./budget */
 import { pgTable as table, pgEnum } from "drizzle-orm/pg-core";
 import * as t from "drizzle-orm/pg-core";
 

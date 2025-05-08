@@ -1,8 +1,4 @@
-/* ---------------------------------------------------------------------
- *  DELETE /api/budgets/:id/transactions/:txId
- *  ---------------------------------------------------------------
- *  Caller must be a member of the budget.  Removes the row.
- * -------------------------------------------------------------------*/
+
 import { db } from "@/utils/dbconfig";
 import { budgetMembers } from "@/utils/budget";
 import { transactions } from "@/utils/transaction";
@@ -21,7 +17,6 @@ export async function DELETE(
   const budgetId = Number(params.id);
   const txId = Number(params.txId);
 
-  /* ACL check */
   const [mem] = await db
     .select()
     .from(budgetMembers)
@@ -30,7 +25,6 @@ export async function DELETE(
 
   if (!mem) return Response.json({ error: "Forbidden" }, { status: 403 });
 
-  /* delete row (no 404 if already gone) */
   await db
     .delete(transactions)
     .where(and(eq(transactions.id, txId), eq(transactions.budgetId, budgetId)));

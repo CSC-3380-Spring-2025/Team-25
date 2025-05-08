@@ -3,7 +3,6 @@ import { budgets, budgetMembers } from "./budget";
 import { transactions } from "./transaction";
 import { sql, eq, desc } from "drizzle-orm";
 
-/** Top‑N progress leaderboard restricted to one user (owner or shared). */
 export async function getLeaderboardForUser(userId: number, limit = 5) {
   const pct = sql<number>`ABS(COALESCE(SUM(${transactions.amount}),0))::float
                           / NULLIF(${budgets.targetAmount},0)`;

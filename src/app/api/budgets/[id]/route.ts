@@ -6,7 +6,6 @@ import { eq, and, sql } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
-/* GET /api/budgets/:id – single budget with spent total */
 export async function GET(
   _req: Request,
   { params }: { params: { id: string } },
@@ -63,7 +62,7 @@ export async function DELETE(
     return Response.json({ error: "Forbidden" }, { status: 403 });
   }
 
-  /* Cascade delete: transactions → members → budget */
+  /* Cascade delete: transactions ,members , budget */
   await db.delete(transactions).where(eq(transactions.budgetId, budgetId));
   await db.delete(budgetMembers).where(eq(budgetMembers.budgetId, budgetId));
   await db.delete(budgets).where(eq(budgets.id, budgetId));
