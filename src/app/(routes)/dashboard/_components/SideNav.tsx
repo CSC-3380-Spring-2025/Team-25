@@ -13,7 +13,7 @@ const navItems: NavItem[] = [
   { href: "/dashboard", label: "Overview", icon: Home },
   { href: "/dashboard/budgets", label: "Budgets", icon: ListChecks },
   { href: "/dashboard/leaderboard", label: "Leaderboard", icon: Medal },
-  { href: "/dashboard/settings", label: "Settings", icon: Settings },
+  //{ href: "/dashboard/my-id", label: "My Id", icon: Settings },
 ];
 
 export default function SideNav(): JSX.Element {
