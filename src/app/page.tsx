@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import logo from './logo.svg'; // if unused, you may remove this
 import './App.css';
 import Header from "./_components/Header";
 import Banner from "./_components/Banner";

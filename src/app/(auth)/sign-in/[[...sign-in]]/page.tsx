@@ -1,16 +1,19 @@
 import { SignIn } from '@clerk/nextjs'
 
 export default function Page() {
-    return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
-          <div className="w-full max-w-md space-y-8">
-            <div className="text-center">
-              <h2 className="mt-6 text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
-              <p className="mt-2 text-sm text-gray-600">
-              </p>
-            </div>
-            <SignIn />
-          </div>
-        </div>
-      )
+  return (
+    // Full-height flex container to center content both vertically and horizontally
+    <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4 py-12 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center w-full max-w-md">
+        
+        {/* Centered heading */}
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-6 text-center">
+          Sign in to your account
+        </h2>
+
+        {/* Clerk SignIn component */}
+        <SignIn />
+      </div>
+    </div>
+  )
 }

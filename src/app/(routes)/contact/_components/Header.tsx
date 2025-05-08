@@ -1,31 +1,47 @@
+'use client' // Directive for Next.js to render this component on the client side
+
 import React from 'react';
 import Image from "next/image";
+import { useUser, UserButton } from "@clerk/nextjs";
 
-
-
+// Header functional component
+// This component serves as the header for the application, displaying the logo, title, and user sign-in status
 function Header() {
 
-  const onClick = () => {
-    console.log('Navigate to Home');
-  }
+    // Sign-in status from Clerk
+    const { user, isSignedIn } = useUser();
 
-  return (
-    <div className='p-5 flex items-center justify-between shadow-md'>
-      <Image
-        src={'/logo2.svg'}
-        alt='logo'
-        width={50}
-        height={30}
-      />
-      <h1 className="text-3xl font-bold sm:text-5xl">
-        Budget Tracker
-        </h1>
-      <div className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
-        <a href="http://localhost:3000/sign-in" className="text-sm font-semibold">Sign In</a>
-      </div>
-    </div>
-  );
+    return (
+        // Container with padding, horizontal layout, space-between alignment, and a shadow
+        <div className='p-5 flex items-center justify-between border-1 shadow-md'>
+
+            {/* Logo image */}
+            <Image 
+                src={'/logo2.svg'} // Path to logo
+                alt='logo' // Alt text for accessibility
+                width={50}
+                height={50}
+            />
+
+            {/* App title */}
+            <h1 className="text-3x1 font-extrabold sm:text-3xl">
+                LevelUp Budget
+            </h1>
+
+            {/* Conditional rendering: show UserButton if signed in, otherwise show 'Sign In' button */}
+            {isSignedIn ? 
+                // Clerk-provided user button for managing account/user session
+                <UserButton/> 
+                :
+                // Sign In button styled with dark background and hover effect
+                <div className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
+                    <a href="http://localhost:3000/sign-in" className="text-sm font-semibold">
+                        Sign In
+                    </a>
+                </div>
+            }
+        </div>
+    );
 }
 
-
-export default Header;
+export default Header; // Exporting Header for use in layout or pages
