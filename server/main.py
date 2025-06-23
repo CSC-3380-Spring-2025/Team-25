@@ -1,51 +1,80 @@
-require('dotenv').config();
-const express = require('express');
-const cors = require('cors');
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-const app = express();
-const PORT = process.env.PORT || 8000;
+# Initialize FastAPI app
+app = FastAPI()
 
-app.use(cors({ origin: 'http://localhost:3000' }));
-app.use(express.json());
+# Allow your frontend (React / Next.js on localhost:3000) to access the backend
+origins = [
+    "http://localhost:3000"
+]
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-const users = {
-  1: { id: 1, username: 'alice', points: 200, badges: ['Saver', 'Goal Crusher'] },
-  2: { id: 2, username: 'bob', points: 120, badges: ['First Budget'] },
-};
+# Sample data to mock your gamified budgets
+sample_budgets = [
+    {
+        "id": 1,
+        "name": "Food",
+        "amount": 300,
+        "spent": 150,
+        "points_earned": 50,
+        "badge_unlocked": "Halfway Saver"
+    },
+    {
+        "id": 2,
+        "name": "Entertainment",
+        "amount": 200,
+        "spent": 80,
+        "points_earned": 30,
+        "badge_unlocked": None
+    },
+    {
+        "id": 3,
+        "name": "Savings",
+        "amount": 500,
+        "spent": 0,
+        "points_earned": 100,
+        "badge_unlocked": "Savings Star"
+    }
+]
 
-app.get('/', (req, res) => {
-  res.json({ message: 'LevelUp Budget API is running!' });
-});
+# Root route - quick health check
+@app.get("/")
+async def read_root():
+    return {"message": "Welcome to LevelUp Budget API!"}
 
-app.get('/users/:id', (req, res) => {
-  const user = users[req.params.id];
-  if (!user) return res.status(404).json({ error: 'User not found' });
-  res.json(user);
-});
+# Get list of budgets (gamified data)
+@app.get("/api/budgets")
+async def get_budgets():
+    return {"budgets": sample_budgets}
 
-app.get('/leaderboard', (req, res) => {
-  const leaderboard = Object.values(users).sort((a, b) => b.points - a.points);
-  res.json(leaderboard);
-});
+# Endpoint to get leaderboard (mocked)
+@app.get("/api/leaderboard")
+async def get_leaderboard():
+    leaderboard = [
+        {"username": "justin2flyy", "points": 500},
+        {"username": "Brandon0706", "points": 450},
+        {"username": "BellamyDev", "points": 400},
+        {"username": "Phohou", "points": 350},
+        {"username": "Kennadi718", "points": 300}
+    ]
+    return {"leaderboard": leaderboard}
 
-app.post('/budget', (req, res) => {
-  console.log('Received budget entry:', req.body);
-  res.json({ status: 'success', data: req.body });
-});
+# Example of future extension: get suggestions
+@app.get("/api/suggestions")
+async def get_suggestions():
+    suggestions = [
+        "You might want to review your streaming subscriptions.",
+        "Consider increasing your savings goal by $50 this month!",
+        "Your entertainment spending is below average this month — good job!"
+    ]
+    return {"suggestions": suggestions}
 
-app.get('/suggestions/:id', (req, res) => {
-  const user = users[req.params.id];
-  if (!user) return res.status(404).json({ error: 'User not found' });
-
-  const suggestion = {
-    user_id: user.id,
-    suggestion: 'Cancel your unused music subscription to save $12/month.',
-  };
-  res.json(suggestion);
-});
-
-app.listen(PORT, () => {
-  console.log(`LevelUp Budget backend is running on http://localhost:${PORT}`);
-});
 
