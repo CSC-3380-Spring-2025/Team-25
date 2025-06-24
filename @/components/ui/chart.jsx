@@ -3,6 +3,7 @@ import * as React from "react"
 import * as RechartsPrimitive from "recharts"
 
 import { cn } from "@/lib/utils"
+import { formatCurrency } from "@/utils/formatters"; // Import the formatter
 
 // Format: { THEME_NAME: CSS_SELECTOR }
 const THEMES = {
@@ -200,7 +201,8 @@ function ChartTooltipContent({
                     </div>
                     {item.value && (
                       <span className="text-foreground font-mono font-medium tabular-nums">
-                        {item.value.toLocaleString()}
+                        {/* Apply currency formatting here */}
+                        {formatCurrency(item.value)}
                       </span>
                     )}
                   </div>
