@@ -1,6 +1,7 @@
 
 "use client";
 
+import { formatCurrency } from "@/utils/formatters";
 import React, { useEffect, useState } from "react";
 
 export interface LeaderboardRow {
@@ -25,9 +26,6 @@ export default function Leaderboard({ limit = 5 }: Props): React.JSX.Element | n
 
   if (rows.length === 0) return null;
 
-  const fmt = (n: number) =>
-    n.toLocaleString("en-US", { style: "currency", currency: "USD" });
-
   return (
     <div className="mt-12">
       <h3 className="text-xl font-semibold mb-4">
@@ -48,7 +46,7 @@ export default function Leaderboard({ limit = 5 }: Props): React.JSX.Element | n
             <tr key={row.id} className="border-t dark:border-gray-700">
               <td className="px-4 py-2">{i + 1}</td>
               <td className="px-4 py-2">{row.name}</td>
-              <td className="px-4 py-2 text-right">{fmt(row.spent)}</td>
+              <td className="px-4 py-2 text-right">{formatCurrency(row.spent)}</td>
             </tr>
           ))}
         </tbody>

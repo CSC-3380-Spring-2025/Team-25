@@ -24,7 +24,7 @@ function Header() {
             />
 
             {/* App title */}
-            <h1 className="text-3x1 font-extrabold sm:text-3xl">
+            <h1 className="text-3xl font-extrabold sm:text-3xl">
                 LevelUp Budget
             </h1>
 
@@ -34,8 +34,8 @@ function Header() {
                 <UserButton/> 
                 :
                 // Sign In button styled with dark background and hover effect
-                <div className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition">
-                    <a href="http://localhost:3000/sign-in" className="text-sm font-semibold">
+                <div className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition cursor-pointer">
+                    <a href="/sign-in" className="text-sm font-semibold">
                         Sign In
                     </a>
                 </div>

@@ -11,8 +11,9 @@ export async function getLeaderboardForUser(userId: number, limit = 5) {
     .select({
       id:      budgets.id,
       name:    budgets.name,
-      target:  budgets.targetAmount,
-      spent:   sql<number>`ABS(COALESCE(SUM(${transactions.amount}),0))`.as("spent"),
+      // Convert from cents to dollars/euros for API response
+      target:  sql<number>`${budgets.targetAmount} / 100.0`.as("target"),
+      spent:   sql<number>`ABS(COALESCE(SUM(${transactions.amount}),0)) / 100.0`.as("spent"),
       percent: pct.as("percent"),
     })
     .from(budgets)

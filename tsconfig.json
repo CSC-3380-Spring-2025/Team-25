@@ -1,9 +1,5 @@
 {
   "compilerOptions": {
-    "types": [
-      "node",
-      "src/types"
-    ],
     "paths": {
       "@/*": [
         "src/*"

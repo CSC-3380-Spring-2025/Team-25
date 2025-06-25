@@ -10,6 +10,7 @@ import React, {
   ChangeEvent,
   JSX,
 } from "react";
+import { formatCurrency } from "@/utils/formatters"; // Import the formatter
 import Link from "next/link";
 import { Plus, Users, Trash2 } from "lucide-react";
 import { useAuth, SignInButton } from "@clerk/nextjs";
@@ -22,9 +23,14 @@ export interface BudgetRow {
   members?: string[];
 }
 
-async function apiFetch<T>(url: string, init?: RequestInit): Promise<T> {
-  const r = await fetch(url, { credentials: "include", ...init });
-  if (!r.ok) throw new Error(`${r.status}`);
+async function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {
+  const r = await fetch(path, { credentials: "include", ...init });
+  if (!r.ok) {
+    // Attempt to parse the error message from the response body
+    const errorPayload = await r.json().catch(() => ({ error: "An unknown error occurred" }));
+    const message = errorPayload.error || `Request failed with status ${r.status}`;
+    throw new Error(message);
+  }
   return r.json();
 }
 
@@ -41,7 +47,7 @@ export default function BudgetsPage(): JSX.Element {
       .then((rows) =>
         setBudgets(rows.map((r) => ({ ...r, members: r.members ?? [] }))),
       )
-      .catch(() => setError("Failed to load budgets"))
+      .catch((err) => setError(err instanceof Error ? err.message : "Failed to load budgets"))
       .finally(() => setLoading(false));
 
   useEffect(() => {
@@ -66,8 +72,8 @@ export default function BudgetsPage(): JSX.Element {
       });
       setForm({ name: "", target: "" });
       loadBudgets();
-    } catch {
-      setError("Create failed");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Create failed");
     }
   };
 
@@ -75,9 +81,9 @@ export default function BudgetsPage(): JSX.Element {
   const deleteBudget = async (id: number) => {
     try {
       await apiFetch(`/api/budgets/${id}`, { method: "DELETE" });
-      setBudgets((prev) => prev.filter((b) => b.id !== id));
-    } catch {
-      setError("Delete failed (are you the owner?)");
+      setBudgets((prev) => prev.filter((b) => b.id !== id)); // Only update state if the API call was successful
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Delete failed");
     }
   };
 
@@ -87,7 +93,9 @@ export default function BudgetsPage(): JSX.Element {
     return (
       <div className="mt-6 space-y-4">
         <p className="text-sm text-gray-500">Sign in to manage budgets.</p>
-        
+        <SignInButton mode="modal">
+          <button className="btn btn-primary">Sign in</button>
+        </SignInButton>
       </div>
     );
 
@@ -150,7 +158,7 @@ export default function BudgetsPage(): JSX.Element {
                 >
                   <p className="font-medium">{b.name}</p>
                   <p className="text-sm text-gray-500">
-                    ${b.targetAmount.toLocaleString()} target · {b.members?.length ?? 0}{" "}
+                    {formatCurrency(b.targetAmount)} target · {b.members?.length ?? 0}{" "}
                     member{(b.members?.length ?? 0) !== 1 && "s"}
                   </p>
                 </Link>

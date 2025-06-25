@@ -3,7 +3,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-# Create an instance of the FastAPI class
 app = FastAPI()
 
 # Define the list of origins that are allowed to make requests to this API.
@@ -21,9 +20,6 @@ app.add_middleware(
 )
 
 
-# Define a "route" using a decorator.
-# This tells FastAPI that the function below is in charge of
-# handling requests that go to the path "/" using a GET method.
 @app.get("/")
 async def read_root():
     return {"message": "Hello from the FastAPI backend!"}

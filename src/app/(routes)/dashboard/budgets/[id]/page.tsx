@@ -8,6 +8,7 @@ import React, {
   JSX,
 } from "react";
 import { useParams, useRouter } from "next/navigation";
+import { formatCurrency } from "@/utils/formatters"; // Import the formatter
 import { ArrowLeft, Trash2 } from "lucide-react";
 
 type BudgetSummary = {
@@ -131,8 +132,8 @@ export default function BudgetTransactions(): JSX.Element {
               />
             </div>
             <p className="text-sm text-gray-500">
-              ${spent.toLocaleString()} spent of $
-              {target.toLocaleString()} ({(pct * 100).toFixed(0)} %)
+              {formatCurrency(spent)} spent of{" "}
+              {formatCurrency(target)} ({(pct * 100).toFixed(0)} %)
             </p>
           </div>
 
@@ -183,7 +184,7 @@ export default function BudgetTransactions(): JSX.Element {
                   </span>
 
                   <div className="flex items-center gap-4">
-                    <span>${t.amount.toLocaleString()}</span>
+                    <span>{formatCurrency(t.amount)}</span>
                     <button
                       onClick={() => deleteTx(t.id)}
                       className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700"

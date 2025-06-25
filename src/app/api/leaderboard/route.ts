@@ -1,15 +1,18 @@
 import { db } from "@/utils/dbconfig";
-import {transactions } from "@/utils/transaction";
+import { transactions } from "@/utils/transaction";
 import { budgets } from "@/utils/budget";
 import { sql, desc, eq } from "drizzle-orm";
+import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
 
 export async function GET() {
   const rows = await db
     .select({
       id: budgets.id,
       name: budgets.name,
-      spent: sql<number>`coalesce(sum(${transactions.amount}),0)`.as("spent"),
+      // Convert from cents to dollars/euros for API response
+      spent: sql<number>`coalesce(sum(${transactions.amount}), 0) / 100.0`.as("spent"),
     })
     .from(budgets)
     .leftJoin(
@@ -18,7 +21,7 @@ export async function GET() {
     )
     .groupBy(budgets.id)
     .orderBy(desc(sql`spent`))
-    .limit(10); 
+    .limit(10);
 
-  return Response.json(rows);
+  return NextResponse.json(rows);
 }
