@@ -65,10 +65,16 @@ Built using **Next.js**, **React**, **ShareDB**, **ExpressJS**, and **FastAPI**,
    [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
 3. **Install Backend Dependencies**  
+   cd backend/
+   pip3 install uvicorn
+   pip3 install fastapi
+
 
 4. **Install Frontend Dependencies**  
    Navigate to the frontend directory and run:
    ```bash
+   rm -rf node_modules
+   rm -rf package-lock.json
    npm install
    ```
 
@@ -80,10 +86,12 @@ Built using **Next.js**, **React**, **ShareDB**, **ExpressJS**, and **FastAPI**,
 
 ### 1. Start Backend Server (FastAPI)
 In the root backend directory, run:
-
+```bash
+uvicorn main:app --reload
+```
 
 ### 2. Start Frontend Server (Next.js/React)
-
+In the root directory, run:
 ```bash
 npm run dev
 ```
